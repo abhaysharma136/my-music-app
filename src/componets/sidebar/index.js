@@ -8,7 +8,7 @@ import apiClient from "../../spotify";
 
 export default function Sidebar() {
   const [image, setImage] = useState(
-    "https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg"
+    "https://icons-for-free.com/iconfiles/png/512/profile+user+user+profile+icon-1320184051489783432.png"
   );
   useEffect(() => {
     apiClient.get("me").then((response) => {
