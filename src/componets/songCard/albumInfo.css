@@ -9,7 +9,25 @@
     font-size: 20px;
     font-weight: 700;
     color: #c3d0e3;
+    overflow: hidden;
+    width: 100%;
 }
+
+.marquee{
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 12s linear infinite;
+    padding-left: 100%;
+}
+@keyframes marquee{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-100%);
+    }
+}
+
 .album-info{
     font-size: 14px;
     font-weight: 500;
