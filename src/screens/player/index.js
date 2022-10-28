@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import AudioPlayer from "../../componets/audioPlayer";
 import Queue from "../../componets/queue";
 import SongCard from "../../componets/songCard";
+import Widgets from "../../componets/widgets/index";
 import apiClient from "../../spotify";
 import "./player.css";
 export default function Player() {
@@ -33,6 +34,7 @@ export default function Player() {
           setCurrentIndex={setCurrentIndex}
           total={tracks}
         />
+        <Widgets artistID={currentTrack?.album?.artists[0]?.id} />
       </div>
       <div className="right-player-body">
         <SongCard album={currentTrack?.album} />
