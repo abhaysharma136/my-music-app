@@ -7,6 +7,11 @@ import { IoLibrary } from "react-icons/io5";
 import apiClient from "../../spotify";
 
 export default function Sidebar() {
+  const signOut=()=>{
+    localStorage.removeItem("token");
+    window.location.reload();
+  }
+  
   const [image, setImage] = useState(
     "https://icons-for-free.com/iconfiles/png/512/profile+user+user+profile+icon-1320184051489783432.png"
   );
@@ -29,7 +34,10 @@ export default function Sidebar() {
         />
         <SidebarButton title="Library" to="/" icon={<IoLibrary />} />
       </div>
-      <SidebarButton title="Sign Out" to="" icon={<FaSignOutAlt />} />
+      <div onClick={()=>signOut()}>
+      <SidebarButton title="Sign Out" to="" icon={<FaSignOutAlt />}/>
+      </div>
+      
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Favorites from "../Favorites";
 import Feed from "../Feed";
 import Library from "../library";
 import Player from "../player";
+import Player2 from "../player/player2";
 import Trending from "../Trending";
 import "./home.css";
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
           <Route path="/trending" element={<Trending />} />
           <Route path="/player" element={<Player />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/favorites/player" element={<Player2 />} />
         </Routes>
       </div>
     </Router>

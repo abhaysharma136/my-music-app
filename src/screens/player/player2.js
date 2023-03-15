@@ -6,20 +6,21 @@ import SongCard from "../../componets/songCard";
 import Widgets from "../../componets/widgets/index";
 import apiClient from "../../spotify";
 import "./player.css";
-export default function Player() {
+export default function Player2() {
   const location = useLocation();
   console.log(location)
   const [tracks, setTracks] = useState([]);
+  console.log(tracks);
+  
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     if (location.state) {
       apiClient
-        .get("playlists/" + location.state.id + "/tracks")
+        .get("me/top/tracks")
         .then((res) => {
           setTracks(res.data.items);
           setCurrentTrack(res.data.items[0].track);
-          console.log(res.data.items);
         });
     }
   }, [location.state]);

@@ -18,6 +18,7 @@ export default function Library() {
   const navigate=useNavigate();
 
   const playPlaylist=(id)=>{
+    console.log(id);
     navigate('player',{state:{id:id}})
   }
 
